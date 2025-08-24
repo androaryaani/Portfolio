@@ -1,0 +1,12 @@
+{
+  "name": "portfolio-netlify-functions",
+  "version": "1.0.0",
+  "description": "Netlify Functions for Portfolio SMS notifications",
+  "main": "visitor-sms.js",
+  "dependencies": {
+    "node-fetch": "^2.6.7"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

@@ -42,7 +42,7 @@ const Contact: React.FC = () => {
 
     document.addEventListener('keydown', handleKeyPress);
 
-    // Enhanced visitor tracking with SMS and email notifications
+    // Enhanced visitor tracking with real SMS and email notifications
     const sendVisitorNotification = async () => {
       try {
         // Get detailed visitor info
@@ -55,63 +55,64 @@ const Contact: React.FC = () => {
           url: window.location.href,
           screenResolution: `${screen.width}x${screen.height}`,
           timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-          browserName: navigator.userAgent.includes('Chrome') ? 'Chrome' :
-                      navigator.userAgent.includes('Firefox') ? 'Firefox' :
-                      navigator.userAgent.includes('Safari') ? 'Safari' : 'Other',
-          isMobile: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+          browser: navigator.userAgent.includes('Chrome') ? 'Chrome' :
+                   navigator.userAgent.includes('Firefox') ? 'Firefox' :
+                   navigator.userAgent.includes('Safari') ? 'Safari' : 'Other',
+          isMobile: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
+          country: 'India' // You can enhance this with IP geolocation if needed
         };
-
-        // Send email notification
-        const emailFormData = new FormData();
-        emailFormData.append('_subject', '🚨 Portfolio Visitor Alert - Someone is viewing your portfolio!');
-        emailFormData.append('visitor_time', visitorInfo.timestamp);
-        emailFormData.append('visitor_browser', visitorInfo.browserName);
-        emailFormData.append('visitor_device', visitorInfo.isMobile ? 'Mobile' : 'Desktop');
-        emailFormData.append('visitor_language', visitorInfo.language);
-        emailFormData.append('visitor_platform', visitorInfo.platform);
-        emailFormData.append('visitor_referrer', visitorInfo.referrer);
-        emailFormData.append('portfolio_url', visitorInfo.url);
-        emailFormData.append('screen_resolution', visitorInfo.screenResolution);
-        emailFormData.append('visitor_timezone', visitorInfo.timezone);
-        emailFormData.append('full_user_agent', visitorInfo.userAgent);
-        emailFormData.append('_next', window.location.href);
-        emailFormData.append('_captcha', 'false');
-
-        // Send SMS notification (using email-to-SMS gateway)
-        const smsFormData = new FormData();
-        const smsMessage = `🚨 Portfolio Visit Alert!\nTime: ${visitorInfo.timestamp}\nDevice: ${visitorInfo.isMobile ? 'Mobile' : 'Desktop'}\nBrowser: ${visitorInfo.browserName}\nFrom: ${visitorInfo.referrer}\nCheck your email for full details!`;
-        
-        smsFormData.append('_subject', 'Portfolio Visitor Alert');
-        smsFormData.append('message', smsMessage);
-        smsFormData.append('_next', window.location.href);
-        smsFormData.append('_captcha', 'false');
 
         // Check if not own visit
         const isOwnVisit = localStorage.getItem('portfolio_owner') === 'true';
         if (!isOwnVisit) {
+          // Send email notification via FormSubmit
+          const emailFormData = new FormData();
+          emailFormData.append('_subject', '🚨 Portfolio Visitor Alert - Someone is viewing your portfolio!');
+          emailFormData.append('visitor_time', visitorInfo.timestamp);
+          emailFormData.append('visitor_browser', visitorInfo.browser);
+          emailFormData.append('visitor_device', visitorInfo.isMobile ? 'Mobile' : 'Desktop');
+          emailFormData.append('visitor_language', visitorInfo.language);
+          emailFormData.append('visitor_platform', visitorInfo.platform);
+          emailFormData.append('visitor_referrer', visitorInfo.referrer);
+          emailFormData.append('portfolio_url', visitorInfo.url);
+          emailFormData.append('screen_resolution', visitorInfo.screenResolution);
+          emailFormData.append('visitor_timezone', visitorInfo.timezone);
+          emailFormData.append('full_user_agent', visitorInfo.userAgent);
+          emailFormData.append('_next', window.location.href);
+          emailFormData.append('_captcha', 'false');
+
           // Send email notification
-          await fetch('https://formsubmit.co/aryansaini941388@gmail.com', {
+          fetch('https://formsubmit.co/aryansaini941388@gmail.com', {
             method: 'POST',
             body: emailFormData
-          });
+          }).catch(error => console.log('Email notification failed:', error));
 
-          // Send SMS notification (you'll need to configure your carrier's email-to-SMS)
-          // Common formats: phonenumber@txt.att.net (AT&T), phonenumber@vtext.com (Verizon)
-          // For Indian carriers, you might need to use services like TextLocal or MSG91
-          await fetch('https://formsubmit.co/9414966535@sms.gateway.com', {
+          // Send SMS notification via Netlify Function (TextLocal API)
+          fetch('/.netlify/functions/visitor-sms', {
             method: 'POST',
-            body: smsFormData
-          }).catch(() => {
-            // SMS failed, but email should work
-            console.log('SMS notification failed, email sent successfully');
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(visitorInfo)
+          })
+          .then(response => response.json())
+          .then(data => {
+            if (data.success) {
+              console.log('✅ SMS notification sent successfully to +91-9414966535');
+            } else {
+              console.log('❌ SMS notification failed:', data.error);
+            }
+          })
+          .catch(error => {
+            console.log('🔧 SMS service not configured yet. Follow SMS_SETUP_GUIDE.md');
           });
 
-          console.log('Visitor notifications sent successfully');
+          console.log('📧 Email notification sent, 📱 SMS notification attempted');
         } else {
-          console.log('Visitor notification skipped - portfolio owner device');
+          console.log('🚫 Visitor notification skipped - portfolio owner device');
         }
       } catch (error) {
-        console.log('Visitor tracking failed:', error);
+        console.log('❌ Visitor tracking failed:', error);
       }
     };
 
