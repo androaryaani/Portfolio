@@ -9,10 +9,10 @@ const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="py-16" style={{ backgroundColor: 'var(--coffee)' }}>
+    <footer className="py-12" style={{ backgroundColor: 'var(--coffee)' }}>
       <div className="container mx-auto px-6">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
           
           {/* About Section */}
           <div className="lg:col-span-2">
@@ -116,34 +116,10 @@ const Footer: React.FC = () => {
             </nav>
           </div>
 
-          {/* Skills Summary */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4" style={{ color: 'var(--almond)' }}>
-              Core Expertise
-            </h4>
-            <div className="space-y-3">
-              <div className="flex items-center space-x-2">
-                <Brain size={16} style={{ color: 'var(--tan)' }} />
-                <span style={{ color: 'var(--chamoisee)' }}>Data Science & AI</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Server size={16} style={{ color: 'var(--tan)' }} />
-                <span style={{ color: 'var(--chamoisee)' }}>Cloud & DevOps</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Code2 size={16} style={{ color: 'var(--tan)' }} />
-                <span style={{ color: 'var(--chamoisee)' }}>Full-Stack Development</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <MapPin size={16} style={{ color: 'var(--tan)' }} />
-                <span style={{ color: 'var(--chamoisee)' }}>India</span>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Bottom Footer */}
-        <div className="border-t border-[var(--tan)] pt-8">
+        <div className="border-t border-[var(--tan)] pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
               <p className="text-base" style={{ color: 'var(--almond)' }}>

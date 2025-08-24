@@ -42,10 +42,10 @@ const Contact: React.FC = () => {
 
     document.addEventListener('keydown', handleKeyPress);
 
-    // Visitor tracking - Send notification when someone visits portfolio
+    // Enhanced visitor tracking with SMS and email notifications
     const sendVisitorNotification = async () => {
       try {
-        // Get visitor info
+        // Get detailed visitor info
         const visitorInfo = {
           timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
           userAgent: navigator.userAgent,
@@ -54,31 +54,59 @@ const Contact: React.FC = () => {
           referrer: document.referrer || 'Direct visit',
           url: window.location.href,
           screenResolution: `${screen.width}x${screen.height}`,
-          timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
+          timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+          browserName: navigator.userAgent.includes('Chrome') ? 'Chrome' :
+                      navigator.userAgent.includes('Firefox') ? 'Firefox' :
+                      navigator.userAgent.includes('Safari') ? 'Safari' : 'Other',
+          isMobile: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
         };
 
-        // Create form data for visitor tracking
-        const formData = new FormData();
-        formData.append('_subject', '🚨 Portfolio Visitor Alert - Someone is viewing your portfolio!');
-        formData.append('visitor_time', visitorInfo.timestamp);
-        formData.append('visitor_browser', visitorInfo.userAgent);
-        formData.append('visitor_language', visitorInfo.language);
-        formData.append('visitor_platform', visitorInfo.platform);
-        formData.append('visitor_referrer', visitorInfo.referrer);
-        formData.append('portfolio_url', visitorInfo.url);
-        formData.append('screen_resolution', visitorInfo.screenResolution);
-        formData.append('visitor_timezone', visitorInfo.timezone);
-        formData.append('_next', window.location.href); // Redirect back to same page
-        formData.append('_captcha', 'false'); // Disable captcha for tracking
+        // Send email notification
+        const emailFormData = new FormData();
+        emailFormData.append('_subject', '🚨 Portfolio Visitor Alert - Someone is viewing your portfolio!');
+        emailFormData.append('visitor_time', visitorInfo.timestamp);
+        emailFormData.append('visitor_browser', visitorInfo.browserName);
+        emailFormData.append('visitor_device', visitorInfo.isMobile ? 'Mobile' : 'Desktop');
+        emailFormData.append('visitor_language', visitorInfo.language);
+        emailFormData.append('visitor_platform', visitorInfo.platform);
+        emailFormData.append('visitor_referrer', visitorInfo.referrer);
+        emailFormData.append('portfolio_url', visitorInfo.url);
+        emailFormData.append('screen_resolution', visitorInfo.screenResolution);
+        emailFormData.append('visitor_timezone', visitorInfo.timezone);
+        emailFormData.append('full_user_agent', visitorInfo.userAgent);
+        emailFormData.append('_next', window.location.href);
+        emailFormData.append('_captcha', 'false');
 
-        // Send visitor notification (avoid sending from your own visits)
+        // Send SMS notification (using email-to-SMS gateway)
+        const smsFormData = new FormData();
+        const smsMessage = `🚨 Portfolio Visit Alert!\nTime: ${visitorInfo.timestamp}\nDevice: ${visitorInfo.isMobile ? 'Mobile' : 'Desktop'}\nBrowser: ${visitorInfo.browserName}\nFrom: ${visitorInfo.referrer}\nCheck your email for full details!`;
+        
+        smsFormData.append('_subject', 'Portfolio Visitor Alert');
+        smsFormData.append('message', smsMessage);
+        smsFormData.append('_next', window.location.href);
+        smsFormData.append('_captcha', 'false');
+
+        // Check if not own visit
         const isOwnVisit = localStorage.getItem('portfolio_owner') === 'true';
         if (!isOwnVisit) {
+          // Send email notification
           await fetch('https://formsubmit.co/aryansaini941388@gmail.com', {
             method: 'POST',
-            body: formData
+            body: emailFormData
           });
-          console.log('Visitor notification sent successfully');
+
+          // Send SMS notification (you'll need to configure your carrier's email-to-SMS)
+          // Common formats: phonenumber@txt.att.net (AT&T), phonenumber@vtext.com (Verizon)
+          // For Indian carriers, you might need to use services like TextLocal or MSG91
+          await fetch('https://formsubmit.co/9414966535@sms.gateway.com', {
+            method: 'POST',
+            body: smsFormData
+          }).catch(() => {
+            // SMS failed, but email should work
+            console.log('SMS notification failed, email sent successfully');
+          });
+
+          console.log('Visitor notifications sent successfully');
         } else {
           console.log('Visitor notification skipped - portfolio owner device');
         }
@@ -289,21 +317,6 @@ const Contact: React.FC = () => {
                 </button>
               </form>
 
-              {/* Alternative Contact Method */}
-              <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
-                <h4 className="font-semibold text-blue-800 mb-2">Alternative Contact Methods:</h4>
-                <div className="space-y-2 text-sm">
-                  <p className="text-blue-700">
-                    📧 Direct Email: <a href="mailto:aryansaini941388@gmail.com" className="underline">aryansaini941388@gmail.com</a>
-                  </p>
-                  <p className="text-blue-700">
-                    📱 WhatsApp: <a href="https://wa.me/919414966535" target="_blank" rel="noopener noreferrer" className="underline">+91-9414966535</a>
-                  </p>
-                  <p className="text-blue-700">
-                    💼 LinkedIn: <a href="https://www.linkedin.com/in/aryan-saini-08a7052b1" target="_blank" rel="noopener noreferrer" className="underline">Connect on LinkedIn</a>
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
         </div>

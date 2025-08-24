@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS Notification Setup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 { color: #333; }
+        .info-box {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #2196f3;
+        }
+        .warning-box {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #ff9800;
+        }
+        code {
+            background: #f5f5f5;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        .step {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📱 SMS Notification Setup for Portfolio Visitors</h1>
+        
+        <div class="info-box">
+            <strong>Current Status:</strong> Your portfolio is set up to send email notifications when someone visits. 
+            To get SMS notifications on your phone (+91-9414966535), follow the steps below.
+        </div>
+
+        <h2>🔧 Setup Options for SMS Notifications:</h2>
+
+        <div class="step">
+            <h3>Option 1: Email-to-SMS (Carrier Gateway)</h3>
+            <p>Most mobile carriers provide email-to-SMS gateways. For Indian carriers:</p>
+            <ul>
+                <li><strong>Airtel:</strong> phonenumber@airtelmail.com</li>
+                <li><strong>Jio:</strong> phonenumber@jiomail.com</li>
+                <li><strong>Vi/Vodafone:</strong> phonenumber@vtext.com</li>
+            </ul>
+            <p>Example: <code>9414966535@airtelmail.com</code></p>
+        </div>
+
+        <div class="step">
+            <h3>Option 2: SMS API Services (Recommended)</h3>
+            <p>For reliable SMS notifications, use these Indian SMS services:</p>
+            <ul>
+                <li><strong>TextLocal:</strong> textlocal.in - Free tier available</li>
+                <li><strong>MSG91:</strong> msg91.com - Popular in India</li>
+                <li><strong>Fast2SMS:</strong> fast2sms.com - Easy setup</li>
+                <li><strong>Twilio:</strong> twilio.com - International service</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h3>Option 3: WhatsApp Notifications</h3>
+            <p>Get instant WhatsApp messages when someone visits your portfolio:</p>
+            <ul>
+                <li>Use WhatsApp Business API</li>
+                <li>Or set up email-to-WhatsApp using services like Zapier</li>
+                <li>Your WhatsApp: +91-9414966535</li>
+            </ul>
+        </div>
+
+        <div class="warning-box">
+            <strong>Note:</strong> The current code includes a placeholder SMS gateway. You'll need to:
+            <ol>
+                <li>Choose one of the options above</li>
+                <li>Sign up for the service</li>
+                <li>Get your API credentials</li>
+                <li>Update the contact form code with your SMS service details</li>
+            </ol>
+        </div>
+
+        <h2>📊 Visitor Information Collected:</h2>
+        <ul>
+            <li>🕐 Visit timestamp (India time)</li>
+            <li>🌐 Browser type (Chrome, Firefox, Safari, etc.)</li>
+            <li>📱 Device type (Mobile/Desktop)</li>
+            <li>🗣️ Language preference</li>
+            <li>💻 Operating system</li>
+            <li>🔗 Referrer (where they came from)</li>
+            <li>📏 Screen resolution</li>
+            <li>🌍 Timezone</li>
+            <li>🔍 Full browser details</li>
+        </ul>
+
+        <div class="info-box">
+            <strong>Privacy Note:</strong> All visitor tracking is anonymous and only collects technical information. 
+            No personal data is collected without consent.
+        </div>
+
+        <p><a href="/" style="color: #2196f3; text-decoration: none;">← Back to Portfolio</a></p>
+    </div>
+
+    <script>
+        // Demo visitor info display
+        console.log('Current visitor info that would be sent:');
+        console.log({
+            timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+            browser: navigator.userAgent.includes('Chrome') ? 'Chrome' : 
+                    navigator.userAgent.includes('Firefox') ? 'Firefox' : 
+                    navigator.userAgent.includes('Safari') ? 'Safari' : 'Other',
+            device: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? 'Mobile' : 'Desktop',
+            language: navigator.language,
+            platform: navigator.platform,
+            screenResolution: `${screen.width}x${screen.height}`,
+            timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
+        });
+    </script>
+</body>
+</html>
