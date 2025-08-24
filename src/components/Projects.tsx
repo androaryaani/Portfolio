@@ -81,38 +81,38 @@ const smallToolsData = [
   {
     title: "RAM Check Tool",
     description: "System utility to monitor and analyze RAM usage with detailed memory statistics and performance metrics.",
-    tech: ["Python", "System Monitoring", "Memory Analysis"],
+    tech: ["Python", "System Monitoring", "Memory Analysis", "Streamlit"],
     category: "Python",
     image: "https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=600",
-    github: "#",
-    demo: "#"
+    github: "https://github.com/androaryaani/ram-checker",
+    demo: "https://ram-checker.streamlit.app/"
   },
   {
     title: "Search Engine",
     description: "Custom search engine implementation with web crawling capabilities and indexed search functionality.",
-    tech: ["Python", "Web Crawling", "Search Algorithm"],
+    tech: ["Python", "Web Crawling", "Search Algorithm", "Streamlit"],
     category: "Python",
     image: "https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg?auto=compress&cs=tinysrgb&w=600",
-    github: "#",
-    demo: "#"
+    github: "https://github.com/androaryaani/search-engine",
+    demo: "https://search-engine-tool.streamlit.app/"
   },
   {
     title: "Digital Image Processor",
     description: "Image processing tool with filters, transformations, and enhancement capabilities for digital images.",
-    tech: ["Python", "Image Processing", "OpenCV"],
+    tech: ["Python", "Image Processing", "OpenCV", "Streamlit"],
     category: "Python",
     image: "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=600",
-    github: "#",
-    demo: "#"
+    github: "https://github.com/androaryaani/Inbuilt-Digital-Image",
+    demo: "https://inbuilt-digital-image.streamlit.app/"
   },
   {
     title: "Data Scraper from Google",
     description: "Web scraping tool to extract and analyze data from Google search results with automated data collection.",
-    tech: ["Python", "Web Scraping", "Data Extraction"],
+    tech: ["Python", "Web Scraping", "Data Extraction", "Streamlit"],
     category: "Python",
     image: "https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=600",
-    github: "#",
-    demo: "#"
+    github: "https://github.com/androaryaani/data-scraper",
+    demo: "https://data-scraper-tool.streamlit.app/"
   },
   {
     title: "Menu Based Project",
@@ -134,13 +134,13 @@ const smallToolsData = [
   },
   // AWS Tools
   {
-    title: "Instance Launch with URL",
+    title: "AWS EC2 Instance Manager",
     description: "AWS automation tool to launch EC2 instances with custom configurations and automatic URL generation.",
-    tech: ["AWS", "EC2", "Automation", "Cloud"],
+    tech: ["AWS", "EC2", "Automation", "Cloud", "Streamlit"],
     category: "AWS",
     image: "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=600",
-    github: "#",
-    demo: "#"
+    github: "https://github.com/androaryaani/AWS-EC2-Launcher",
+    demo: "https://aws-ec2-launcher.streamlit.app/"
   },
   // Linux Tools
   {
