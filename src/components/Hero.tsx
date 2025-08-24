@@ -72,8 +72,8 @@ const Hero: React.FC = () => {
             >
               <Instagram size={24} style={{ color: 'var(--coffee)' }} />
             </a>
-            <a 
-              href="mailto:aryansaini41388@gmail.com"
+            <a
+              href="mailto:aryansaini941388@gmail.com"
               className="glass-card p-4 hover:scale-110 transition-transform duration-300"
             >
               <Mail size={24} style={{ color: 'var(--coffee)' }} />
@@ -90,22 +90,22 @@ const Hero: React.FC = () => {
         {/* Right Side - Personal Photo */}
         <div className="flex-1 flex justify-center items-center">
           <div className="relative">
-            {/* Main Photo Container - Clean without fog */}
-            <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-[var(--coffee)] shadow-2xl">
+            {/* Main Photo Container - Bigger and more responsive */}
+            <div className="w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] xl:w-[32rem] xl:h-[32rem] rounded-full overflow-hidden border-4 border-[var(--coffee)] shadow-2xl">
               <img
                 src="/WhatsApp Image 2024-05-02 at 21..jpg"
-                alt="Aryan Saini"
+                alt="Aryan Saini - Data Scientist & ML Engineer"
                 className="w-full h-full object-cover object-center hover:scale-110 transition-transform duration-500"
               />
             </div>
             
-            {/* Subtle Border Glow Effect - Only 0.3 opacity */}
-            <div 
+            {/* Enhanced Border Glow Effect */}
+            <div
               className="absolute inset-0 rounded-full border-2 pointer-events-none"
               style={{
                 borderColor: 'var(--coffee)',
-                opacity: 0.3,
-                boxShadow: `0 0 30px rgba(127, 85, 57, 0.3)`
+                opacity: 0.4,
+                boxShadow: `0 0 40px rgba(127, 85, 57, 0.4), 0 0 80px rgba(127, 85, 57, 0.2)`
               }}
             ></div>
           </div>
