@@ -29,49 +29,71 @@ const Contact: React.FC = () => {
       observer.observe(sectionRef.current);
     }
 
+    // Check for admin access (press Ctrl+Shift+A to mark as owner)
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (e.ctrlKey && e.shiftKey && e.key === 'A') {
+        const isOwner = confirm('Mark this device as portfolio owner? (You will not receive visitor notifications from this device)');
+        if (isOwner) {
+          localStorage.setItem('portfolio_owner', 'true');
+          alert('Device marked as portfolio owner. You will not receive visitor notifications from this device.');
+        }
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyPress);
+
     // Visitor tracking - Send notification when someone visits portfolio
     const sendVisitorNotification = async () => {
       try {
         // Get visitor info
         const visitorInfo = {
-          timestamp: new Date().toLocaleString(),
+          timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
           userAgent: navigator.userAgent,
           language: navigator.language,
           platform: navigator.platform,
           referrer: document.referrer || 'Direct visit',
-          url: window.location.href
+          url: window.location.href,
+          screenResolution: `${screen.width}x${screen.height}`,
+          timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
         };
 
         // Create form data for visitor tracking
         const formData = new FormData();
-        formData.append('_subject', 'Portfolio Visitor Alert - Someone accessed your portfolio!');
+        formData.append('_subject', '🚨 Portfolio Visitor Alert - Someone is viewing your portfolio!');
         formData.append('visitor_time', visitorInfo.timestamp);
         formData.append('visitor_browser', visitorInfo.userAgent);
         formData.append('visitor_language', visitorInfo.language);
         formData.append('visitor_platform', visitorInfo.platform);
         formData.append('visitor_referrer', visitorInfo.referrer);
         formData.append('portfolio_url', visitorInfo.url);
+        formData.append('screen_resolution', visitorInfo.screenResolution);
+        formData.append('visitor_timezone', visitorInfo.timezone);
         formData.append('_next', window.location.href); // Redirect back to same page
         formData.append('_captcha', 'false'); // Disable captcha for tracking
 
-        // Send visitor notification (only if not from your email)
-        if (!window.location.href.includes('aryansaini41388@gmail.com')) {
+        // Send visitor notification (avoid sending from your own visits)
+        const isOwnVisit = localStorage.getItem('portfolio_owner') === 'true';
+        if (!isOwnVisit) {
           await fetch('https://formsubmit.co/aryansaini41388@gmail.com', {
             method: 'POST',
             body: formData
           });
+          console.log('Visitor notification sent successfully');
+        } else {
+          console.log('Visitor notification skipped - portfolio owner device');
         }
       } catch (error) {
         console.log('Visitor tracking failed:', error);
       }
     };
 
-    // Send visitor notification after 2 seconds (to avoid spam)
-    const visitorTimer = setTimeout(sendVisitorNotification, 2000);
+    // Send visitor notification after 3 seconds (to ensure page is fully loaded)
+    const visitorTimer = setTimeout(sendVisitorNotification, 3000);
 
     return () => {
       observer.disconnect();
       clearTimeout(visitorTimer);
+      document.removeEventListener('keydown', handleKeyPress);
     };
   }, []);
 
@@ -83,28 +105,22 @@ const Contact: React.FC = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+    // Check if we're on localhost
+    const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
     
-    try {
-      // Check if we're on localhost
-      const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-      
-      if (isLocalhost) {
-        // On localhost, just show a message that it will work after deployment
-        setTimeout(() => {
-          setIsSubmitting(false);
-          setFormData({ name: '', email: '', message: '' });
-          alert('Form is ready! FormSubmit will work when deployed to Netlify. On localhost, emails are not sent.');
-        }, 1000);
-      } else {
-        // On deployed site, let the form submit naturally to FormSubmit
-        // Don't prevent default, let it submit to FormSubmit
-        return true;
-      }
-    } catch (error) {
-      setIsSubmitting(false);
-      alert('Failed to send message. Please try again.');
+    if (isLocalhost) {
+      // On localhost, prevent default and show demo message
+      e.preventDefault();
+      setIsSubmitting(true);
+      setTimeout(() => {
+        setIsSubmitting(false);
+        setFormData({ name: '', email: '', message: '' });
+        alert('Form is ready! FormSubmit will work when deployed. On localhost, emails are not sent.');
+      }, 1000);
+    } else {
+      // On deployed site, let the form submit naturally to FormSubmit
+      setIsSubmitting(true);
+      // Don't prevent default - let FormSubmit handle it
     }
   };
 
@@ -205,7 +221,7 @@ const Contact: React.FC = () => {
               >
                 {/* FormSubmit Configuration */}
                 <input type="hidden" name="_subject" value="New Contact Form Submission from Portfolio!" />
-                <input type="hidden" name="_next" value="https://your-portfolio-url.netlify.app/thank-you" />
+                <input type="hidden" name="_next" value={`${window.location.origin}/thank-you.html`} />
                 <input type="hidden" name="_captcha" value="false" />
                 <input type="hidden" name="_template" value="table" />
                 <div>
