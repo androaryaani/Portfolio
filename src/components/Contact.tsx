@@ -74,7 +74,7 @@ const Contact: React.FC = () => {
         // Send visitor notification (avoid sending from your own visits)
         const isOwnVisit = localStorage.getItem('portfolio_owner') === 'true';
         if (!isOwnVisit) {
-          await fetch('https://formsubmit.co/aryansaini41388@gmail.com', {
+          await fetch('https://formsubmit.co/aryansaini941388@gmail.com', {
             method: 'POST',
             body: formData
           });
@@ -161,7 +161,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <p className="font-semibold" style={{ color: 'var(--coffee)' }}>Email</p>
-                    <p style={{ color: 'var(--chamoisee)' }}>aryansaini41388@gmail.com</p>
+                    <p style={{ color: 'var(--chamoisee)' }}>aryansaini941388@gmail.com</p>
                   </div>
                 </div>
 
@@ -214,16 +214,17 @@ const Contact: React.FC = () => {
           <div className="contact-content opacity-0 transform translate-x-10 transition-all duration-700">
             <div className="glass-card p-8">
               <form
-                action="https://formsubmit.co/aryansaini41388@gmail.com"
+                action="https://formsubmit.co/aryansaini941388@gmail.com"
                 method="POST"
                 onSubmit={handleSubmit}
                 className="contact-form space-y-6"
               >
                 {/* FormSubmit Configuration */}
-                <input type="hidden" name="_subject" value="New Contact Form Submission from Portfolio!" />
-                <input type="hidden" name="_next" value={`${window.location.origin}/thank-you.html`} />
+                <input type="hidden" name="_subject" value="🚀 New Contact Form Submission from Portfolio!" />
+                <input type="hidden" name="_next" value={window.location.origin + "/thank-you.html"} />
                 <input type="hidden" name="_captcha" value="false" />
                 <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_autoresponse" value="Thank you for contacting me! I'll get back to you soon." />
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2" style={{ color: 'var(--coffee)' }}>
                     Name
@@ -287,6 +288,22 @@ const Contact: React.FC = () => {
                   </div>
                 </button>
               </form>
+
+              {/* Alternative Contact Method */}
+              <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                <h4 className="font-semibold text-blue-800 mb-2">Alternative Contact Methods:</h4>
+                <div className="space-y-2 text-sm">
+                  <p className="text-blue-700">
+                    📧 Direct Email: <a href="mailto:aryansaini941388@gmail.com" className="underline">aryansaini941388@gmail.com</a>
+                  </p>
+                  <p className="text-blue-700">
+                    📱 WhatsApp: <a href="https://wa.me/919414966535" target="_blank" rel="noopener noreferrer" className="underline">+91-9414966535</a>
+                  </p>
+                  <p className="text-blue-700">
+                    💼 LinkedIn: <a href="https://www.linkedin.com/in/aryan-saini-08a7052b1" target="_blank" rel="noopener noreferrer" className="underline">Connect on LinkedIn</a>
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
