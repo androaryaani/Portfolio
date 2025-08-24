@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --almond: #ede0d4;
+  --dun: #e6ccb2;
+  --tan: #ddb892;
+  --chamoisee: #b08968;
+  --coffee: #7f5539;
+  --raw-umber: #9c6644;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background: linear-gradient(135deg, var(--almond) 0%, var(--dun) 100%);
+  overflow-x: hidden;
+}
+
+.noise-bg {
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(159, 102, 68, 0.05) 1px, transparent 0);
+  background-size: 20px 20px;
+}
+
+.glass-card {
+  background: rgba(237, 224, 212, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(237, 224, 212, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(127, 85, 57, 0.1);
+}
+
+.glow-text {
+  text-shadow: 0 0 20px rgba(159, 102, 68, 0.3);
+}
+
+.typing-cursor::after {
+  content: '|';
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.scroll-indicator {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.skill-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-card:hover {
+  transform: translateY(-8px) rotate(5deg);
+  box-shadow: 0 20px 40px rgba(127, 85, 57, 0.2);
+}
+
+.project-card {
+  transition: all 0.3s ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+.timeline-dot {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.05);
+  }
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  box-shadow: 0 0 0 2px rgba(159, 102, 68, 0.2);
+}
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--raw-umber), var(--coffee));
+  transform-origin: left;
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  .hero-split {
+    flex-direction: column;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .project-card {
+    flex-direction: column;
+  }
+}
