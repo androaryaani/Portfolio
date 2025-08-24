@@ -73,15 +73,6 @@ const projectsData = [
     image: "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=600",
     github: "https://github.com/androaryaani/ec2-ai-agent",
     demo: "#"
-  },
-  {
-    title: "AI-Powered Web Scraper with Streamlit",
-    description: "Advanced web scraping tool powered by artificial intelligence for intelligent data extraction. Features automated content parsing, smart data filtering, and interactive Streamlit interface for seamless web scraping operations.",
-    tech: ["Python", "Streamlit", "AI", "Web Scraping", "Data Extraction", "Automation"],
-    category: "Artificial Intelligence",
-    image: "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=600",
-    github: "https://github.com/androaryaani/ai-web-scraper/",
-    demo: "https://aitool-web-scraper.streamlit.app/"
   }
 ];
 
@@ -131,6 +122,15 @@ const smallToolsData = [
     image: "https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg?auto=compress&cs=tinysrgb&w=600",
     github: "#",
     demo: "#"
+  },
+  {
+    title: "AI-Powered Web Scraper",
+    description: "Advanced web scraping tool powered by artificial intelligence for intelligent data extraction. Features automated content parsing, smart data filtering, and interactive Streamlit interface.",
+    tech: ["Python", "Streamlit", "AI", "Web Scraping"],
+    category: "Python",
+    image: "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=600",
+    github: "https://github.com/androaryaani/ai-web-scraper/",
+    demo: "https://aitool-web-scraper.streamlit.app/"
   },
   // AWS Tools
   {
