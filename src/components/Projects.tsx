@@ -115,13 +115,13 @@ const smallToolsData = [
     demo: "https://data-scraper-tool.streamlit.app/"
   },
   {
-    title: "Menu Based Project",
+    title: "Python Menu Based Project",
     description: "Interactive command-line application with organized menu system for various Python utilities and tools.",
     tech: ["Python", "CLI", "Menu System"],
     category: "Python",
     image: "https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg?auto=compress&cs=tinysrgb&w=600",
-    github: "#",
-    demo: "#"
+    github: "https://github.com/androaryaani/Python-menu-Based",
+    demo: "https://python-menu-based.streamlit.app/"
   },
   {
     title: "AI-Powered Web Scraper",
@@ -149,8 +149,8 @@ const smallToolsData = [
     tech: ["Linux", "System Customization", "Shell Script"],
     category: "Linux",
     image: "https://images.pexels.com/photos/1181298/pexels-photo-1181298.jpeg?auto=compress&cs=tinysrgb&w=600",
-    github: "#",
-    demo: "#"
+    github: "https://github.com/androaryaani/Icon-changer-in-Linux",
+    demo: "https://icon-changer-in-linux.streamlit.app/"
   },
   {
     title: "Menu Based GUI and CLI Tool",
@@ -158,18 +158,9 @@ const smallToolsData = [
     tech: ["Linux", "GUI", "CLI", "System Admin"],
     category: "Linux",
     image: "https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=600",
-    github: "#",
-    demo: "#"
+    github: "https://github.com/androaryaani/linux-SSH-GUI-CLI-menu",
+    demo: "https://linux-ssh-gui-cli-menu.streamlit.app/"
   },
-  {
-    title: "Message Sending Tool",
-    description: "Linux-based messaging utility for automated message delivery across multiple platforms and protocols.",
-    tech: ["Linux", "Messaging", "Automation", "Communication"],
-    category: "Linux",
-    image: "https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=600",
-    github: "#",
-    demo: "#"
-  }
 ];
 
 const Projects: React.FC = () => {
