@@ -3,6 +3,28 @@ import { ExternalLink, Github, Filter } from 'lucide-react';
 
 const projectsData = [
   {
+    title: "AWS EC2 Computer Vision Controller",
+    description: "A computer vision application that uses face authentication and hand gesture recognition to control AWS EC2 instances. Features real-time logging, cross-platform support, and intuitive gesture controls for launching, terminating, and managing EC2 instances through hand movements.",
+    tech: ["Python", "Computer Vision", "AWS EC2", "Face Recognition", "Hand Gesture", "OpenCV", "boto3"],
+    category: "AWS",
+    image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600",
+    github: "https://github.com/androaryaani/AWS-ECS--COMPUTER-CONTROLLER",
+    demo: "https://github.com/androaryaani/AWS-ECS--COMPUTER-CONTROLLER",
+    isNew: true,
+    newDate: "28 Aug 2025"
+  },
+  {
+    title: "YouTube Scraper and Visualizer",
+    description: "A comprehensive Streamlit web application for scraping and analyzing YouTube videos. Extract video metadata, statistics, comments, transcripts, and generate insightful visualizations with advanced features like word frequency analysis and multi-video comparison.",
+    tech: ["Python", "Streamlit", "YouTube API", "Data Visualization", "Web Scraping", "Machine Learning"],
+    category: "Machine Learning",
+    image: "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=600",
+    github: "https://github.com/androaryaani/Youtbue-Scraper-and-Visualizer",
+    demo: "https://youtbue-scraper-and-visualizer.streamlit.app/",
+    isNew: true,
+    newDate: "27 Aug 2025"
+  },
+  {
     title: "WeatherWatch",
     description: "Advanced weather prediction and monitoring system using machine learning algorithms. Features real-time weather data analysis, forecasting models, and interactive visualizations for accurate weather predictions.",
     tech: ["Python", "Machine Learning", "Streamlit", "Weather API", "Data Analysis"],
@@ -296,9 +318,21 @@ const Projects: React.FC = () => {
                   
                 </div>
                 <div className="md:w-1/2 p-8">
-                  <h3 className="text-2xl font-bold mb-4" style={{ color: 'var(--coffee)' }}>
-                    {project.title}
-                  </h3>
+                  <div className="flex items-center gap-3 mb-4">
+                    <h3 className="text-2xl font-bold" style={{ color: 'var(--coffee)' }}>
+                      {project.title}
+                    </h3>
+                    {project.isNew && (
+                      <div className="flex flex-col items-center">
+                        <span className="px-3 py-1 text-xs font-bold rounded-full bg-red-500 text-white animate-pulse">
+                          NEW
+                        </span>
+                        <span className="text-xs mt-1" style={{ color: 'var(--chamoisee)' }}>
+                          Posted {project.newDate}
+                        </span>
+                      </div>
+                    )}
+                  </div>
                   <p className="text-lg mb-6" style={{ color: 'var(--chamoisee)' }}>
                     {project.description}
                   </p>

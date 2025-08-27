@@ -8,6 +8,36 @@ const Certificates: React.FC = () => {
   const certificates = [
     {
       id: 1,
+      title: 'Hackathon Achievement',
+      issuer: 'Hackathon Organization',
+      date: '2024',
+      description: 'Recognition for outstanding performance and innovation in hackathon competition',
+      fileUrl: '/hackthon.jpg',
+      type: 'image',
+      skills: ['Innovation', 'Problem Solving', 'Team Collaboration', 'Coding']
+    },
+    {
+      id: 2,
+      title: 'LinkedIn Professional Certification',
+      issuer: 'LinkedIn Learning',
+      date: '2024',
+      description: 'Professional development certification from LinkedIn Learning platform',
+      fileUrl: '/linkedin.jpg',
+      type: 'image',
+      skills: ['Professional Development', 'LinkedIn', 'Career Growth']
+    },
+    {
+      id: 3,
+      title: 'National Exhibition Participation',
+      issuer: 'National Exhibition Authority',
+      date: '2024',
+      description: 'Certificate of participation and recognition in national level exhibition',
+      fileUrl: '/national exibition.jpg',
+      type: 'image',
+      skills: ['Exhibition', 'Presentation', 'National Level', 'Recognition']
+    },
+    {
+      id: 4,
       title: 'Professional Certificate',
       issuer: 'Aryan Saini Certification',
       date: '2024',
@@ -17,7 +47,7 @@ const Certificates: React.FC = () => {
       skills: ['Professional Development', 'Technical Skills']
     },
     {
-      id: 2,
+      id: 5,
       title: 'Advanced Certification',
       issuer: 'Professional Institute',
       date: '2024',
@@ -27,7 +57,7 @@ const Certificates: React.FC = () => {
       skills: ['Advanced Skills', 'Specialization']
     },
     {
-      id: 3,
+      id: 6,
       title: 'Technical Excellence Certificate',
       issuer: 'Technical Authority',
       date: '2024',
@@ -37,7 +67,7 @@ const Certificates: React.FC = () => {
       skills: ['Technical Excellence', 'Innovation']
     },
     {
-      id: 4,
+      id: 7,
       title: 'AWS Certification',
       issuer: 'Amazon Web Services',
       date: '2024',
@@ -47,7 +77,7 @@ const Certificates: React.FC = () => {
       skills: ['AWS', 'Cloud Computing', 'DevOps']
     },
     {
-      id: 5,
+      id: 8,
       title: 'Red Hat Certification',
       issuer: 'Red Hat',
       date: '2024',

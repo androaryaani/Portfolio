@@ -34,6 +34,10 @@ const Skills: React.FC = () => {
   const skillCategories = {
     'Programming': [
       { name: 'Python', icon: <Code size={32} />, level: 90, color: 'var(--coffee)' },
+      { name: 'NumPy', icon: <BarChart3 size={32} />, level: 85, color: 'var(--raw-umber)' },
+      { name: 'Pandas', icon: <Database size={32} />, level: 90, color: 'var(--chamoisee)' },
+      { name: 'Seaborn', icon: <BarChart3 size={32} />, level: 80, color: 'var(--tan)' },
+      { name: 'Matplotlib', icon: <BarChart3 size={32} />, level: 85, color: 'var(--coffee)' },
       { name: 'HTML/CSS', icon: <FileText size={32} />, level: 85, color: 'var(--tan)' },
       { name: 'SQL', icon: <Database size={32} />, level: 80, color: 'var(--coffee)' },
     ],
@@ -163,7 +167,7 @@ const Skills: React.FC = () => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .animate-bounce-in {
           opacity: 1 !important;
           transform: scale(1) !important;

@@ -118,26 +118,19 @@ const Footer: React.FC = () => {
 
         {/* Bottom Footer - Single Line */}
         <div className="border-t border-[var(--tan)] pt-3">
-          <div className="flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
-            <p className="text-sm mb-2 sm:mb-0" style={{ color: 'var(--almond)' }}>
-              © {currentYear} Aryan Saini. Made with{' '}
-              <Heart size={14} className="inline mx-1 text-red-400" fill="currentColor" />{' '}
-              and lots of coffee.
+          <div className="flex justify-between items-center">
+            <p className="text-sm" style={{ color: 'var(--almond)' }}>
+              © {currentYear} Aryan Saini.
             </p>
             
-            <div className="flex items-center space-x-3">
-              <span className="text-xs" style={{ color: 'var(--chamoisee)' }}>
-                Built with React & TypeScript
-              </span>
-              <button
-                onClick={scrollToTop}
-                className="glass-card p-2 hover:scale-110 transition-transform duration-300"
-                style={{ backgroundColor: 'rgba(237, 224, 212, 0.1)' }}
-                title="Back to top"
-              >
-                <ArrowUp size={16} style={{ color: 'var(--almond)' }} />
-              </button>
-            </div>
+            <button
+              onClick={scrollToTop}
+              className="glass-card p-2 hover:scale-110 transition-transform duration-300"
+              style={{ backgroundColor: 'rgba(237, 224, 212, 0.1)' }}
+              title="Back to top"
+            >
+              <ArrowUp size={16} style={{ color: 'var(--almond)' }} />
+            </button>
           </div>
         </div>
       </div>

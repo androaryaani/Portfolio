@@ -56,6 +56,27 @@ const Timeline: React.FC = () => {
       side: 'right'
     },
     {
+      year: 'Late 2024',
+      title: 'LinkedIn Professional Development',
+      description: 'Completed LinkedIn Learning professional certification program. Enhanced career development skills and professional networking capabilities.',
+      icon: <Award size={24} />,
+      side: 'left'
+    },
+    {
+      year: 'Early 2025',
+      title: 'National Exhibition Participation',
+      description: 'Participated in national level exhibition showcasing technical projects and innovations. Gained recognition for presentation and technical excellence.',
+      icon: <Award size={24} />,
+      side: 'right'
+    },
+    {
+      year: 'Mid 2025',
+      title: 'Hackathon Achievement',
+      description: 'Participated in competitive hackathon and achieved recognition for innovative problem-solving and coding skills. Demonstrated ability to work under pressure and deliver creative solutions.',
+      icon: <Code2 size={24} />,
+      side: 'left'
+    },
+    {
       year: 'June 2, 2025',
       title: 'DevOps & AI Internship Begins',
       description: 'Started internship at Linux World Informatics Private Limited. Focused on DevOps practices, Generative AI, and Agentic AI technologies with hands-on industry experience.',
@@ -100,7 +121,7 @@ const Timeline: React.FC = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-20">
+    <section id="timeline" ref={sectionRef} className="py-20">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold mb-4 glow-text" style={{ color: 'var(--coffee)' }}>

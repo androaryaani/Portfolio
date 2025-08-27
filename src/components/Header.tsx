@@ -32,6 +32,7 @@ const Header: React.FC = () => {
     { name: 'About', href: '#about' },
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
+    { name: 'Timeline', href: '#timeline' },
     { name: 'Certificates', href: '#certificates' },
     { name: 'Contact', href: '#contact' }
   ];
@@ -76,8 +77,11 @@ const Header: React.FC = () => {
           <div className="hidden md:block">
             <button
               onClick={() => {
-                // Replace with actual resume download link
-                window.open('#', '_blank');
+                // Download the resume PDF
+                const link = document.createElement('a');
+                link.href = '/resume-aryan.pdf';
+                link.download = 'Aryan-Resume.pdf';
+                link.click();
               }}
               className="flex items-center space-x-2 glass-card px-6 py-3 hover:scale-105 transition-transform duration-300 font-semibold"
               style={{
@@ -119,7 +123,11 @@ const Header: React.FC = () => {
               ))}
               <button
                 onClick={() => {
-                  window.open('#', '_blank');
+                  // Download the resume PDF
+                  const link = document.createElement('a');
+                  link.href = '/resume-aryan.pdf';
+                  link.download = 'Aryan-Resume.pdf';
+                  link.click();
                   setIsMenuOpen(false);
                 }}
                 className="flex items-center space-x-2 glass-card px-6 py-3 mt-4 font-semibold justify-center"
