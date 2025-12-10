@@ -34,12 +34,12 @@ const Skills: React.FC = () => {
   const skillCategories = {
     'Programming': [
       { name: 'Python', icon: <Code size={32} />, level: 90, color: 'var(--coffee)' },
-      { name: 'NumPy', icon: <BarChart3 size={32} />, level: 85, color: 'var(--raw-umber)' },
-      { name: 'Pandas', icon: <Database size={32} />, level: 90, color: 'var(--chamoisee)' },
-      { name: 'Seaborn', icon: <BarChart3 size={32} />, level: 80, color: 'var(--tan)' },
-      { name: 'Matplotlib', icon: <BarChart3 size={32} />, level: 85, color: 'var(--coffee)' },
-      { name: 'HTML/CSS', icon: <FileText size={32} />, level: 85, color: 'var(--tan)' },
-      { name: 'SQL', icon: <Database size={32} />, level: 80, color: 'var(--coffee)' },
+      { name: 'Langchain', icon: <Brain size={32} />, level: 85, color: 'var(--raw-umber)' },
+      { name: 'Streamlit', icon: <Monitor size={32} />, level: 90, color: 'var(--chamoisee)' },
+      { name: 'NumPy', icon: <BarChart3 size={32} />, level: 85, color: 'var(--tan)' },
+      { name: 'Pandas', icon: <Database size={32} />, level: 90, color: 'var(--coffee)' },
+      { name: 'HTML/CSS', icon: <FileText size={32} />, level: 85, color: 'var(--raw-umber)' },
+      { name: 'SQL', icon: <Database size={32} />, level: 80, color: 'var(--chamoisee)' },
     ],
     'Technical': [
       { name: 'Machine Learning', icon: <Brain size={32} />, level: 85, color: 'var(--coffee)' },
@@ -60,17 +60,17 @@ const Skills: React.FC = () => {
       { name: 'Adaptability', icon: <Zap size={32} />, level: 95, color: 'var(--raw-umber)' }
     ],
     'Tools': [
-      { name: 'VS Code', icon: <Terminal size={32} />, level: 90, color: 'var(--coffee)' },
-      { name: 'Jupyter Notebook', icon: <Play size={32} />, level: 85, color: 'var(--raw-umber)' },
-      { name: 'Git/GitHub', icon: <GitBranch size={32} />, level: 85, color: 'var(--chamoisee)' },
-      { name: 'Power BI', icon: <BarChart3 size={32} />, level: 80, color: 'var(--tan)' },
-      { name: 'Canva', icon: <Palette size={32} />, level: 75, color: 'var(--coffee)' },
-      { name: 'Streamlit', icon: <Monitor size={32} />, level: 80, color: 'var(--raw-umber)' },
-      { name: 'IntelliJ IDEA', icon: <Code size={32} />, level: 80, color: 'var(--chamoisee)' },
-      { name: 'Android Studio', icon: <Monitor size={32} />, level: 75, color: 'var(--tan)' },
-      { name: 'MySQL', icon: <Database size={32} />, level: 85, color: 'var(--coffee)' },
-      { name: 'Anaconda', icon: <Terminal size={32} />, level: 90, color: 'var(--raw-umber)' },
-      { name: 'AWS CLI', icon: <Cloud size={32} />, level: 70, color: 'var(--chamoisee)' }
+      { name: 'Git & GitHub', icon: <GitBranch size={32} />, level: 90, color: 'var(--coffee)' },
+      { name: 'Google Collab', icon: <Play size={32} />, level: 85, color: 'var(--raw-umber)' },
+      { name: 'Jupyter Notebook', icon: <Play size={32} />, level: 90, color: 'var(--chamoisee)' },
+      { name: 'Postman', icon: <Settings size={32} />, level: 80, color: 'var(--tan)' },
+      { name: 'Firebase', icon: <Database size={32} />, level: 75, color: 'var(--coffee)' },
+      { name: 'VS Code', icon: <Terminal size={32} />, level: 90, color: 'var(--raw-umber)' },
+      { name: 'Streamlit', icon: <Monitor size={32} />, level: 85, color: 'var(--chamoisee)' },
+      { name: 'AWS CLI', icon: <Cloud size={32} />, level: 75, color: 'var(--tan)' },
+      { name: 'boto3', icon: <Cloud size={32} />, level: 80, color: 'var(--coffee)' },
+      { name: 'AWS EC2', icon: <Server size={32} />, level: 80, color: 'var(--raw-umber)' },
+      { name: 'IAM', icon: <Settings size={32} />, level: 75, color: 'var(--chamoisee)' }
     ]
   };
 
@@ -157,11 +157,11 @@ const Skills: React.FC = () => {
               Continuous Learning Journey
             </h3>
             <p className="text-lg leading-relaxed" style={{ color: 'var(--chamoisee)' }}>
-              Before diving into data science, I explored various technologies driven by curiosity. I built websites, 
-              developed mobile applications, and worked with different design tools. This multi-technology approach 
-              helped me create small projects across different domains - from web development to app development. 
-              All of this was self-learned, which strengthened my foundation and gave me a comprehensive understanding 
-              of technology before specializing in data science.
+              Before diving into AI development, I explored various technologies driven by curiosity. I built websites,
+              developed mobile applications, and worked with different design tools. This multi-technology approach
+              helped me create small projects across different domains - from web development to app development.
+              All of this was self-learned, which strengthened my foundation and gave me a comprehensive understanding
+              of technology before specializing in AI development and intelligent systems.
             </p>
           </div>
         </div>

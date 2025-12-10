@@ -3,64 +3,6 @@ import { ExternalLink, Github, Filter } from 'lucide-react';
 
 const projectsData = [
   {
-    title: "AWS EC2 Computer Vision Controller",
-    description: "A computer vision application that uses face authentication and hand gesture recognition to control AWS EC2 instances. Features real-time logging, cross-platform support, and intuitive gesture controls for launching, terminating, and managing EC2 instances through hand movements.",
-    tech: ["Python", "Computer Vision", "AWS EC2", "Face Recognition", "Hand Gesture", "OpenCV", "boto3"],
-    category: "AWS",
-    image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600",
-    github: "https://github.com/androaryaani/AWS-ECS--COMPUTER-CONTROLLER",
-    demo: "https://github.com/androaryaani/AWS-ECS--COMPUTER-CONTROLLER",
-    isNew: true,
-    newDate: "28 Aug 2025"
-  },
-  {
-    title: "YouTube Scraper and Visualizer",
-    description: "A comprehensive Streamlit web application for scraping and analyzing YouTube videos. Extract video metadata, statistics, comments, transcripts, and generate insightful visualizations with advanced features like word frequency analysis and multi-video comparison.",
-    tech: ["Python", "Streamlit", "YouTube API", "Data Visualization", "Web Scraping", "Machine Learning"],
-    category: "Machine Learning",
-    image: "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=600",
-    github: "https://github.com/androaryaani/Youtbue-Scraper-and-Visualizer",
-    demo: "https://youtbue-scraper-and-visualizer.streamlit.app/",
-    isNew: true,
-    newDate: "27 Aug 2025"
-  },
-  {
-    title: "WeatherWatch",
-    description: "Advanced weather prediction and monitoring system using machine learning algorithms. Features real-time weather data analysis, forecasting models, and interactive visualizations for accurate weather predictions.",
-    tech: ["Python", "Machine Learning", "Streamlit", "Weather API", "Data Analysis"],
-    category: "Machine Learning",
-    image: "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=600",
-    github: "https://github.com/androaryaani/WeatherWatch",
-    demo: "https://weather-watch.streamlit.app/"
-  },
-  {
-    title: "Food Delivery Prediction",
-    description: "Machine learning model for predicting food delivery times and optimizing delivery routes. Uses advanced algorithms to analyze historical data and provide accurate delivery time estimates.",
-    tech: ["Python", "Machine Learning", "Streamlit", "Predictive Analytics", "Data Science"],
-    category: "Machine Learning",
-    image: "https://images.pexels.com/photos/4393021/pexels-photo-4393021.jpeg?auto=compress&cs=tinysrgb&w=600",
-    github: "https://github.com/androaryaani/food-del-predication",
-    demo: "https://food-del-predication.streamlit.app/"
-  },
-  {
-    title: "VGUTDP Research System",
-    description: "Advanced research management platform for VGUTDP with comprehensive data handling, automated workflows, and collaborative features for academic research projects.",
-    tech: ["Research Management", "Data Processing", "Academic Tools", "Collaboration"],
-    category: "Web-app",
-    image: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=600",
-    github: "https://github.com/androaryaani/vgutdp",
-    demo: "#"
-  },
-  {
-    title: "Legalyze India",
-    description: "Comprehensive legal analysis platform for Indian law with advanced search capabilities, case studies, and legal document processing. Features intelligent legal research tools and case management system.",
-    tech: ["Legal Tech", "Document Processing", "Search Engine", "Case Management", "Indian Law"],
-    category: "Web-app",
-    image: "https://images.pexels.com/photos/5668772/pexels-photo-5668772.jpeg?auto=compress&cs=tinysrgb&w=600",
-    github: "https://github.com/androaryaani/legalyze-india",
-    demo: "https://legalyzeindia.netlify.app/"
-  },
-  {
     title: "Streamlit Hand Game",
     description: "Interactive Tic-Tac-Toe game with computer vision hand detection. Built using Streamlit and OpenCV for real-time gesture recognition.",
     tech: ["Python", "Streamlit", "OpenCV", "Computer Vision"],
@@ -79,18 +21,9 @@ const projectsData = [
     demo: "#"
   },
   {
-    title: "Python Menu Based Project",
-    description: "Interactive menu-driven Python application with multiple automation tools and utilities. Features command-line interface with organized menu system for various programming tasks and workflows.",
-    tech: ["Python", "CLI", "Menu System", "Automation", "Interactive Tools"],
-    category: "Python",
-    image: "https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg?auto=compress&cs=tinysrgb&w=600",
-    github: "https://github.com/androaryaani/menu-based-project",
-    demo: "#"
-  },
-  {
-    title: "EC2 AI Agent",
-    description: "A Streamlit application that uses Large Language Models (Gemini) and LangChain to provide a natural language interface for AWS EC2 management. Features LLM-based intent extraction, conversational memory, multiple EC2 operations, and real-time updates with secure configuration.",
-    tech: ["Python", "Streamlit", "LangChain", "Google Gemini", "boto3", "AWS EC2", "Pydantic"],
+    title: "AWS EC2 Agentic Control System",
+    description: "An LLM-powered agent framework that intelligently launches and terminates AWS EC2 instances using natural-language prompts and decision-driven tool selection. Features advanced automation and intelligent resource management.",
+    tech: ["Python", "LangChain", "AWS EC2", "LLM", "boto3", "Agentic AI"],
     category: "AWS",
     image: "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=600",
     github: "https://github.com/androaryaani/ec2-ai-agent",
@@ -193,7 +126,7 @@ const Projects: React.FC = () => {
   const [activeToolFilter, setActiveToolFilter] = useState('All');
   const [filteredTools, setFilteredTools] = useState<any[]>(smallToolsData);
 
-  const filters = ['All', 'Machine Learning', 'Artificial Intelligence', 'Python', 'Web-app', 'AWS'];
+  const filters = ['All', 'Artificial Intelligence', 'AWS'];
   const toolFilters = ['All', 'Python', 'Linux', 'AWS'];
 
   // Pagination logic for Featured Projects

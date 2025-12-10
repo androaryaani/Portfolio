@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
             Aryan Saini
           </h3>
           <p className="text-sm mb-3 max-w-xl mx-auto" style={{ color: 'var(--chamoisee)' }}>
-            Data Scientist & ML Engineer passionate about AI, cloud computing, and DevOps.
+            AI Developer & ML Engineer passionate about artificial intelligence, cloud computing, and DevOps.
           </p>
           
           {/* Social Icons - Smaller */}

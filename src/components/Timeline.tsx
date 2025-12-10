@@ -106,15 +106,15 @@ const Timeline: React.FC = () => {
     },
     {
       year: 'Present',
-      title: 'Data Science Preparation & Skill Building',
-      description: 'Currently focused on intensive Data Science preparation, building strong foundation in machine learning, statistics, and analytics. Leveraging internship experience and startup knowledge to strengthen DS expertise.',
+      title: 'AI Development & Advanced Skill Building',
+      description: 'Currently focused on intensive AI Development, building strong foundation in artificial intelligence, machine learning, and intelligent systems. Leveraging internship experience and startup knowledge to strengthen AI development expertise.',
       icon: <Brain size={24} />,
       side: 'left'
     },
     {
       year: '2026 & Beyond',
       title: 'Multi-Technology Innovation Vision',
-      description: 'Dream to create innovative solutions by combining Data Science + AWS + Agentic AI + Generative AI + DevOps + MLOps. Goal to build cutting-edge products that integrate all these technologies for revolutionary impact in the tech industry.',
+      description: 'Dream to create innovative solutions by combining AI Development + AWS + Agentic AI + Generative AI + DevOps + MLOps. Goal to build cutting-edge products that integrate all these technologies for revolutionary impact in the tech industry.',
       icon: <GraduationCap size={24} />,
       side: 'right'
     }

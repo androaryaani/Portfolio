@@ -32,14 +32,14 @@ const About: React.FC = () => {
   const aboutData = {
     intro: {
       title: "About Me",
-      subtitle: "Passionate Data Scientist & ML Engineer",
-      description: "I'm a dedicated data scientist and machine learning engineer who specializes in combining Data Science + AWS + DevOps + Agentic AI + Generative AI to create innovative solutions. My approach focuses on methodology and workflow optimization, solving every problem with a comprehensive multi-technology strategy that drives real-world impact."
+      subtitle: "Passionate AI Developer & ML Engineer",
+      description: "Qualified logic & workflow architect with solid experience in supporting project tasks and contributing to team goals. I specialize in AI Development, Machine Learning, DevOps, and AWS. I have assisted in successful execution of various projects, showcasing organizational and multitasking skills with demonstrated proficiency in time and work management."
     },
     highlights: [
       {
         icon: <Brain size={28} />,
-        title: "Data Science Expertise",
-        description: "Specialized in machine learning, statistical analysis, and predictive modeling to extract meaningful insights from complex datasets."
+        title: "AI Development Expertise",
+        description: "Specialized in artificial intelligence development, machine learning systems, and intelligent automation to create cutting-edge AI solutions and applications."
       },
       {
         icon: <Code size={28} />,
@@ -174,7 +174,7 @@ const About: React.FC = () => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .animate-slide-up {
           opacity: 1 !important;
           transform: translateY(0) !important;

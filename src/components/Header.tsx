@@ -79,8 +79,8 @@ const Header: React.FC = () => {
               onClick={() => {
                 // Download the resume PDF
                 const link = document.createElement('a');
-                link.href = '/resume-aryan.pdf';
-                link.download = 'Aryan-Resume.pdf';
+                link.href = '/andro-resume.pdf';
+                link.download = 'Aryan-Saini-Resume.pdf';
                 link.click();
               }}
               className="flex items-center space-x-2 glass-card px-6 py-3 hover:scale-105 transition-transform duration-300 font-semibold"
@@ -125,8 +125,8 @@ const Header: React.FC = () => {
                 onClick={() => {
                   // Download the resume PDF
                   const link = document.createElement('a');
-                  link.href = '/resume-aryan.pdf';
-                  link.download = 'Aryan-Resume.pdf';
+                  link.href = '/andro-resume.pdf';
+                  link.download = 'Aryan-Saini-Resume.pdf';
                   link.click();
                   setIsMenuOpen(false);
                 }}

@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
               </span>
             </h1>
             <h2 className="text-2xl md:text-3xl font-medium" style={{ color: 'var(--coffee)' }}>
-              Data Scientist | ML Engineer
+              Gen AI Developer | AI Engineer
             </h2>
             <p className="text-xl md:text-2xl italic" style={{ color: 'var(--chamoisee)' }}>
               Turning curiosity into multi technology.
@@ -56,17 +56,17 @@ const Hero: React.FC = () => {
             >
               <Github size={24} style={{ color: 'var(--coffee)' }} />
             </a>
-            <a 
-              href="https://www.linkedin.com/in/aryan-saini-08a7052b1" 
-              target="_blank" 
+            <a
+              href="https://www.linkedin.com/in/aryan-saini067"
+              target="_blank"
               rel="noopener noreferrer"
               className="glass-card p-4 hover:scale-110 transition-transform duration-300"
             >
               <Linkedin size={24} style={{ color: 'var(--coffee)' }} />
             </a>
-            <a 
-              href="https://www.instagram.com/aryan_saini067" 
-              target="_blank" 
+            <a
+              href="https://www.instagram.com/v.aryaani?igsh=YTN0MmVka2tkODRw"
+              target="_blank"
               rel="noopener noreferrer"
               className="glass-card p-4 hover:scale-110 transition-transform duration-300"
             >
@@ -93,9 +93,10 @@ const Hero: React.FC = () => {
             {/* Main Photo Container - Bigger and more responsive */}
             <div className="w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] xl:w-[32rem] xl:h-[32rem] rounded-full overflow-hidden border-4 border-[var(--coffee)] shadow-2xl">
               <img
-                src="/WhatsApp Image 2024-05-02 at 21..jpg"
-                alt="Aryan Saini - Data Scientist & ML Engineer"
-                className="w-full h-full object-cover object-center hover:scale-110 transition-transform duration-500"
+                src="/herohero.png"
+                alt="Aryan Saini - Gen AI Developer & AI Engineer"
+                className="w-full h-full object-cover object-top hover:scale-110 transition-transform duration-500"
+                style={{ objectPosition: 'center top' }}
               />
             </div>
             
