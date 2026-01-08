@@ -3,13 +3,13 @@ import { ExternalLink, Github, Filter } from 'lucide-react';
 
 const projectsData = [
   {
-    title: "Streamlit Hand Game",
-    description: "Interactive Tic-Tac-Toe game with computer vision hand detection. Built using Streamlit and OpenCV for real-time gesture recognition.",
-    tech: ["Python", "Streamlit", "OpenCV", "Computer Vision"],
-    category: "Artificial Intelligence",
-    image: "https://images.pexels.com/photos/3861943/pexels-photo-3861943.jpeg?auto=compress&cs=tinysrgb&w=600",
-    github: "https://github.com/androaryaani",
-    demo: "#"
+    title: "Food Delivery Prediction",
+    description: "Machine learning model to predict food delivery times using various factors like distance, weather, traffic, and restaurant preparation time. Built with advanced data science techniques and deployed on Streamlit.",
+    tech: ["Python", "Machine Learning", "Data Science", "Streamlit", "Pandas", "Scikit-learn"],
+    category: "Data Science",
+    image: "https://images.pexels.com/photos/4393021/pexels-photo-4393021.jpeg?auto=compress&cs=tinysrgb&w=600",
+    github: "https://github.com/androaryaani/food-del-predication",
+    demo: "https://food-del-predication.streamlit.app/"
   },
   {
     title: "Personal AI Chatbot",
@@ -17,8 +17,8 @@ const projectsData = [
     tech: ["Python", "Streamlit", "NLP", "AI"],
     category: "Artificial Intelligence",
     image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600",
-    github: "https://github.com/androaryaani",
-    demo: "#"
+    github: "https://github.com/androaryaani/nlpchatbot",
+    demo: "https://nlpbotcha.streamlit.app/"
   },
   {
     title: "AWS EC2 Agentic Control System",
@@ -126,7 +126,7 @@ const Projects: React.FC = () => {
   const [activeToolFilter, setActiveToolFilter] = useState('All');
   const [filteredTools, setFilteredTools] = useState<any[]>(smallToolsData);
 
-  const filters = ['All', 'Artificial Intelligence', 'AWS'];
+  const filters = ['All', 'Data Science', 'Artificial Intelligence', 'AWS'];
   const toolFilters = ['All', 'Python', 'Linux', 'AWS'];
 
   // Pagination logic for Featured Projects
