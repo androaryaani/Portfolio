@@ -111,6 +111,13 @@ Passionate Data Scientist and ML Engineer with expertise in Artificial Intellige
 - **GitHub:** [food-del-predication](https://github.com/androaryaani/food-del-predication)
 - **Live Demo:** [Food Delivery App](https://food-del-predication.streamlit.app/)
 
+### Personal AI Chatbot
+- Custom chatbot built with Streamlit featuring natural language processing and personalized responses
+- Advanced NLP capabilities for various use cases and interactive conversations
+- **Technologies:** Python, Streamlit, NLP, AI, Natural Language Processing
+- **GitHub:** [nlpchatbot](https://github.com/androaryaani/nlpchatbot)
+- **Live Demo:** [NLP Bot Chat App](https://nlpbotcha.streamlit.app/)
+
 ### EC2 AI Agent
 - Streamlit application using Large Language Models for AWS EC2 management
 - Natural language interface with LangChain and Google Gemini integration
